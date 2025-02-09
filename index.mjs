@@ -82,7 +82,7 @@ export const handler = async (event) => {
     const res = await request(url);
 
     // Replace the timezone with the correct one
-    const body = res.body
+    const body = res
       .replace(/AUS Eastern Standard Time/g, 'Australia/Melbourne')
       .replace(/E. Australia Standard Time/g, 'Australia/Melbourne');
 
