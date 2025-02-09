@@ -71,7 +71,7 @@ const SUCCESS_RESPONSE = (body) => ({
  * @returns {object} Lambda HTTP response
  */
 export const handler = async (event) => {
-  const url = event.queryStringParameters.url;
+  const url = event.queryStringParameters?.url;
   const http = event.requestContext.http;
   if (http.method !== 'GET' || http.path !== '/ics-fix' || !url?.startsWith('https://')) {
     return BAD_REQUEST();
